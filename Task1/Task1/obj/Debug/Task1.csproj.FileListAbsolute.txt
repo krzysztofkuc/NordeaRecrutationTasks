@@ -1,0 +1,10 @@
+C:\Users\Krzysztof\source\repos\Task1\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+C:\Users\Krzysztof\source\repos\Task1\Task1\bin\Debug\Task1.exe.config
+C:\Users\Krzysztof\source\repos\Task1\Task1\bin\Debug\Task1.exe
+C:\Users\Krzysztof\source\repos\Task1\Task1\bin\Debug\Task1.pdb
+C:\Users\Krzysztof\source\repos\Task1\Task1\bin\Debug\Autofac.dll
+C:\Users\Krzysztof\source\repos\Task1\Task1\bin\Debug\Autofac.pdb
+C:\Users\Krzysztof\source\repos\Task1\Task1\bin\Debug\Autofac.xml
+C:\Users\Krzysztof\source\repos\Task1\Task1\obj\Debug\Task1.csproj.CopyComplete
+C:\Users\Krzysztof\source\repos\Task1\Task1\obj\Debug\Task1.exe
+C:\Users\Krzysztof\source\repos\Task1\Task1\obj\Debug\Task1.pdb
