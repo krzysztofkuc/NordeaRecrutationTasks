@@ -32,14 +32,21 @@ namespace Task1
 
         private IEnumerable<PositionPrice> GetProductWithPosition(Position[] positions, Price[] prices)
         {
-            var corelation = positions.Join(prices,
-                            pos => pos.ProductKey,
-                            pri => pri.ProductKey,
-                            (pos, pri) => new PositionPrice { Price = pri,
-                                                            Position = pos,
-                                                            MarketValue = pri.Value * (double)pos.Amount });
+            // Here I use cast to "decimal" type because it is recommended type for numbers that can be represent
+            // as an integer times a power of 10, can be enough fast for multiplying product value and amount.
+            // "double" operations are faster but we can loose part of number(money) when we calculate many oprations.
+            // Decimal can store more bigger numbers as float/double.
+            // It is recommenden to use decimal types to store big numbers that represent money.
 
-            return corelation;
+            return positions.Join(prices,
+                            pos => new { pos.ProductKey, pos.Date.Date },
+                            pri => new { pri.ProductKey, pri.Date.Date },
+                            (pos, pri) => new PositionPrice
+                            {
+                                Price = pri,
+                                Position = pos,
+                                MarketValue = (decimal)pri.Value * pos.Amount
+                            });
         }
 
         #endregion Private methods

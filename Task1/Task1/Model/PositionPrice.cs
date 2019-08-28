@@ -10,6 +10,6 @@ namespace Task1.Model
     {
         public Position Position { get; set; }
         public Price Price { get; set; }
-        public double MarketValue { get; set; }
+        public decimal MarketValue { get; set; }
 }
 }
