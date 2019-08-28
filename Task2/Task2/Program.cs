@@ -49,7 +49,10 @@ namespace Task2
                                             Task.Run(() => GetPricesFromWebService2()),
                                             Task.Run(() => GetPricesFromWebService3()));
 
-            var result = tasks.SelectMany(r => r).Distinct().ToArray();
+            //  I thnk this is the fastest way
+            //  Just removed ToArray();
+            //  I thought method .ToHashset<Price>(); can Distinct() faster but I have measured and it's not
+            var result = tasks.SelectMany(r => r).Distinct();
 
             //Result should contains 2 Prices objects instead of 3
             foreach (var item in result)

@@ -15,8 +15,9 @@ namespace Task2
 
         public bool Equals(Price other)
         {
-
-            if (ProductKey == other.ProductKey && Date.Date.CompareTo(other.Date.Date) == 0)
+            //Method Date.Date.Equals() can be faster and avoid to equals to 0 operation
+            //This operation can speed up Distinct()
+            if (ProductKey == other.ProductKey && Date.Date.Equals(other.Date.Date))
                 return true;
 
             return false;
@@ -24,10 +25,8 @@ namespace Task2
 
         public override int GetHashCode()
         {
-            int hashPK = ProductKey == null ? 0 : ProductKey.GetHashCode();
-            int hashData = ProductKey == null ? 0 : ProductKey.GetHashCode();
-
-            return hashPK ^ hashData;
+            //less operations - faster algorithm
+            return ProductKey.GetHashCode() ^ Date.GetHashCode();
         }
     }
 }
